@@ -1,0 +1,1 @@
+ def structured(self,n,ok,r="R0",s="INFO",e=""): x={"name":n,"status":"PASS" if ok else "FAIL","rule":r,"severity":s,"evidence":e,"blocked":not ok}; self.history.append(x); return x

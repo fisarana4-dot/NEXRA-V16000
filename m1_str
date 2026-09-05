@@ -1,0 +1,1 @@
+ a,b=r[i-1],r[i];h,l=float(b["high"]),float(b["low"]);ph,pl=float(a["high"]),float(a["low"]);print(i,"HH" if h>ph else "LH" if h<ph else "H=","HL" if l>pl else "LL" if l<pl else "L=")

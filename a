@@ -1,0 +1,6 @@
+from app.autonomy.core.context import gold_context
+from app.intelligence.providers.gemini import GeminiProvider
+def think(q): return GeminiProvider().ask(q+"\n"+gold_context())
+def plan(d):
+ if d.get("decision")=="NO_TRADE":return None
+ return Order(d["decision"],d["price"],d["sl"],d.get("qty",0),d.get("reason",""),d.get("trail",False))

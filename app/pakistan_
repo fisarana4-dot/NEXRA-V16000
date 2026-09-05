@@ -1,0 +1,1 @@
+CROPS={"wheat":{"season":"Rabi"},"rice":{"season":"Kharif"},"maize":{"season":"Kharif"},"cotton":{"season":"Kharif"},"sugarcane":{"season":"Kharif"},"mango":{"season":"Summer"}}

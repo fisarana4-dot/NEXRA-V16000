@@ -1,0 +1,1 @@
+{"version": "1.0", "fields": ["timestamp", "price", "h4_bias", "h1_bias", "m15_structure", "decision", "vsa","mss_bos","liquidity","entry","sl","tp","outcome","lesson"]}

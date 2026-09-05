@@ -1,0 +1,3 @@
+from app.trading.strategy.strategy_engine import strategy_engine
+def test_x():
+ r=strategy_engine.run({"signal":"X"}); assert r[0]["decision"]=="X"

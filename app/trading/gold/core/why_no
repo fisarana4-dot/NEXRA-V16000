@@ -1,0 +1,4 @@
+def explain(d):
+ if d.get("blocked"):return "BLOCKED"
+ if d.get("signal")=="NO_TRADE":return "NO_CONFIRMATION"
+ return "TRADE_ALLOWED"

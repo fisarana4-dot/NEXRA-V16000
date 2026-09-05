@@ -1,0 +1,1 @@
+ def __init__(self,name,status,rule="R0",severity="INFO",evidence=""): self.name=name; self.status=status; self.rule=rule; self.severity=severity; self.evidence=evidence

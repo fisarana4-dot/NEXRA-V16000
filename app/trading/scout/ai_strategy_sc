@@ -1,0 +1,3 @@
+class AIStrategyScout:
+ def analyze(self, prices):
+  if len(prices)<3: return {"decision":"WAIT","reason":"INSUFFICIENT_DATA"}

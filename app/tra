@@ -1,0 +1,4 @@
+class TradeManager:
+ def manage(self,d):
+  e=d["entry"];r=abs(e-d["sl"]);p=d["price"];return {"sl":e} if p>=e+r or p<=e-r else d
+trade_manager=TradeManager()

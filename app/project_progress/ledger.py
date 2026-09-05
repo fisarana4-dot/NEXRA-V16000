@@ -1,0 +1,13 @@
+TASKS=[]
+def add(p,t,c): TASKS.append((p,t,c))
+def report(): print(TASKS)
+add('AI Fusion','Provider Health',100)
+add('AI Fusion','Failover Engine',100)
+add('AI Fusion','Provider Call Abstraction',100)
+add('Products','Global Research',100)
+add('Products','Opportunity Scoring',100)
+add('Products','Metrics Parser',100)
+add('Products','Automatic Business Scoring',50)
+add('Products','Global Discovery',0)
+add('Products','Product Ranking',0)
+add('Products','Market Analysis',0)

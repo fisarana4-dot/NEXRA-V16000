@@ -1,0 +1,1 @@
+ if rg>0 and b/rg<=.15:U.append(max(0,max(float(y["high"]) for y in q)-c));D.append(max(0,c-min(float(y["low"]) for y in q))) /data/data/com.termux/files/home/NEXRA-V16000

@@ -1,0 +1,31 @@
+def detect_swings(d,n=1):
+ r=[]
+ for i in range(n,len(d)-n):
+  if d[i]>d[i-1] and d[i]>d[i+1]: r.append("HIGH")
+  elif d[i]<d[i-1] and d[i]<d[i+1]: r.append("LOW")
+ return r
+
+def classify_swings(s):
+ if len(s)<2:return []
+ h=[x for x in s if x[0]=="HIGH"];l=[x for x in s if x[0]=="LOW"]
+ r=[]
+ if len(h)>1:r.append("HH" if h[1][1]>h[0][1] else "LH")
+ if len(l)>1:r.append("HL" if l[1][1]>l[0][1] else "LL")
+ return r
+
+def detect_swing_points(d,n=1):
+ r=[]
+  if d[i]>d[i-1] and d[i]>d[i+1]:
+   r.append((i,"HIGH",d[i]))
+  elif d[i]<d[i-1] and d[i]<d[i+1]:
+   r.append((i,"LOW",d[i]))
+ return r
+
+def structure_shift(s,close):
+ if not s:return None
+ h=[x for x in s if x[1]=="HIGH"]
+ if h and close>h[-1][2]:return "BOS_UP"
+ return None
+ l=[x for x in s if x[1]=="LOW"]
+ if l and close<l[-1][2]:return "BOS_DOWN"
+ return None

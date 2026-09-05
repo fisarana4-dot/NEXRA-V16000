@@ -1,0 +1,4 @@
+from app.trading.gold.learning.engine import score
+assert score('BUY','BUY')==1
+assert score('BUY','SELL')==0
+print('LEARN TEST PASS')

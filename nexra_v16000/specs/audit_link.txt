@@ -1,0 +1,1 @@
+AI Audit Prompt: Copy from https://github.com/yourusername/NEXRA-V16000/blob/production-hardening/nexra_v16000/specs/ai_audit_full.md

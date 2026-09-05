@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Financials :: Pakistan Stock Exchange Limited (formerly: Karachi Stock Exchange Limited)</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/full-width-pics.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header - set the background image for the header in the line below -->
+    <header class="py-5 bg-image-full" style="background-image: url('images/header-image2.jpg');">
+    </header>
+
+    <table id="demo"></table>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                            <li class="nav-item">
+                <a class="nav-link" id="2026" href="#" onclick="getYearlyData(2026);">
+                  <span data-feather="bar-chart-2"></span>
+                  2026                </a>
+              </li>
+                            <li class="nav-item">
+                <a class="nav-link" id="2025" href="#" onclick="getYearlyData(2025);">
+                  <span data-feather="bar-chart-2"></span>
+                  2025                </a>
+              </li>
+                            <li class="nav-item">
+                <a class="nav-link" id="2024" href="#" onclick="getYearlyData(2024);">
+                  <span data-feather="bar-chart-2"></span>
+                  2024                </a>
+              </li>
+                            <li class="nav-item">
+                <a class="nav-link" id="2023" href="#" onclick="getYearlyData(2023);">
+                  <span data-feather="bar-chart-2"></span>
+                  2023                </a>
+              </li>
+                            <li class="nav-item">
+                <a class="nav-link" id="2022" href="#" onclick="getYearlyData(2022);">
+                  <span data-feather="bar-chart-2"></span>
+                  2022                </a>
+              </li>
+                          </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Search By Company</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="search"></span>
+              </a>
+            </h6><br>
+            <select class="custom-select d-block w-100" id="country" onchange="getCompData()">
+              <option value="">Company Name ...</option>
+                              <option value="786">-</option>
+                              <option value="AABS">-</option>
+                              <option value="ABL-FUNDS">-</option>
+                              <option value="ADAMS">-</option>
+                              <option value="ADMM">-</option>
+                              <option value="AGHA">-</option>
+                              <option value="AGSML">-</option>
+                              <option value="AHTM">-</option>
+                              <option value="AKD-FUNDS">-</option>
+                              <option value="AKGL">-</option>
+                              <option value="ALHAML-FUNDS">-</option>
+                              <option value="ALNRS">-</option>
+                              <option value="ARM">-</option>
+                              <option value="ARPAK">-</option>
+                              <option value="ASTL">-</option>
+                              <option value="ASTM">-</option>
+                              <option value="ATLAS-FUNDS">-</option>
+                              <option value="AVN">-</option>
+                              <option value="AWTX">-</option>
+                              <option value="AWWAL">-</option>
+                              <option value="BAPL">-</option>
+                              <option value="BCML">-</option>
+                              <option value="BECO">-</option>
+                              <option value="BFMOD">-</option>
+                              <option value="BIFO">-</option>
+                              <option value="BNWM">-</option>
+                              <option value="BPBL">-</option>
+                              <option value="BPL">-</option>
+                              <option value="BWHL">-</option>
+                              <option value="BYCO">-</option>
+                              <option value="CCM">-</option>
+                              <option value="CEPB">-</option>
+                              <option value="CFL">-</option>
+                              <option value="CSAP">-</option>
+                              <option value="DAAG">-</option>
+                              <option value="DADX">-</option>
+                              <option value="DCL">-</option>
+                              <option value="DDCI">-</option>
+                              <option value="DDSL">-</option>
+                              <option value="DFML">-</option>
+                              <option value="DFSM">-</option>
+                              <option value="DGKC">-</option>
+                              <option value="DIIL">-</option>
+                              <option value="DKL">-</option>
+                              <option value="DKTM">-</option>
+                              <option value="DLL">-</option>
+                              <option value="DMTM">-</option>
+                              <option value="DMTX">-</option>
+                              <option value="DOL">-</option>
+                              <option value="DSFL">-</option>
+                              <option value="DWTM">-</option>
+                              <option value="DYNO">-</option>
+                              <option value="ELCM">-</option>
+                              <option value="ELSM">-</option>
+                              <option value="FANM">-</option>
+                              <option value="FAYSAL-FUNDS">-</option>
+                              <option value="FCCL">-</option>
+                              <option value="FEROZ">-</option>
+                              <option value="FIMM">-</option>
+                              <option value="FNEL">-</option>
+                              <option value="FPRM">-</option>
+                              <option value="FRCL">-</option>
+                              <option value="FRSM">-</option>
+                              <option value="FTMM">-</option>
+                              <option value="FZCM">-</option>
+                              <option value="GASF">-</option>
+                              <option value="GATI">-</option>
+                              <option value="GATM">-</option>
+                              <option value="GLPL">-</option>
+                              <option value="HABSM">-</option>
+                              <option value="HCL">-</option>
+                              <option value="HICL">-</option>
+                              <option value="HIRAT">-</option>
+                              <option value="HSM">-</option>
+                              <option value="HSPI">-</option>
+                              <option value="HUBC">-</option>
+                              <option value="HUMNL">-</option>
+                              <option value="IBLHL">-</option>
+                              <option value="ICIBL">-</option>
+                              <option value="IDRT">-</option>
+                              <option value="ILTM">-</option>
+                              <option value="INKL">-</option>
+                              <option value="ISIL">-</option>
+                              <option value="JATM">-</option>
+                              <option value="JDMT">-</option>
+                              <option value="JDWS">-</option>
+                              <option value="JOPP">-</option>
+                              <option value="JSIL">-</option>
+                              <option value="JSIL-FUNDS">-</option>
+                              <option value="JSML">-</option>
+                              <option value="KASBM">-</option>
+                              <option value="KCL">-</option>
+                              <option value="KHSM">-</option>
+                              <option value="KHTC">-</option>
+                              <option value="KOHC">-</option>
+                              <option value="KPUS">-</option>
+                              <option value="LAKSON-FUNDS">-</option>
+                              <option value="LMSM">-</option>
+                              <option value="LOADS">-</option>
+                              <option value="LPGL">-</option>
+                              <option value="MACTER">-</option>
+                              <option value="MARI">-</option>
+                              <option value="MCBAH">-</option>
+                              <option value="MCBAH-FUNDS">-</option>
+                              <option value="MEEZAN-FUNDS">-</option>
+                              <option value="MIRKS">-</option>
+                              <option value="MLCF">-</option>
+                              <option value="MQTM">-</option>
+                              <option value="MRNS">-</option>
+                              <option value="MSOT">-</option>
+                              <option value="MTIL">-</option>
+                              <option value="MUREB">-</option>
+                              <option value="NAGC">-</option>
+                              <option value="NATF">-</option>
+                              <option value="NBP-FUNDS">-</option>
+                              <option value="NCPL">-</option>
+                              <option value="NEXT">-</option>
+                              <option value="NML">-</option>
+                              <option value="OCTOPUS">-</option>
+                              <option value="OEFAIF">-</option>
+                              <option value="OEFAKDAIF">-</option>
+                              <option value="OEFAKDCF">-</option>
+                              <option value="OEFAKDITF">-</option>
+                              <option value="OEFAKDOF">-</option>
+                              <option value="OEFBMACRSF">-</option>
+                              <option value="OEFBMAECF">-</option>
+                              <option value="OEFFBGF">-</option>
+                              <option value="OEFFFSOF">-</option>
+                              <option value="OEFFIGF">-</option>
+                              <option value="OEFFISGF">-</option>
+                              <option value="OEFFMMF">-</option>
+                              <option value="OEFFSGF">-</option>
+                              <option value="OEFPCMF">-</option>
+                              <option value="OEFPIEIF">-</option>
+                              <option value="OEFPIF">-</option>
+                              <option value="OEFPSAF">-</option>
+                              <option value="OEFPSMF">-</option>
+                              <option value="OGDC">-</option>
+                              <option value="OLPL">-</option>
+                              <option value="ORIXM">-</option>
+                              <option value="PAKMI">-</option>
+                              <option value="PGLC">-</option>
+                              <option value="PIAA">-</option>
+                              <option value="PIBTL">-</option>
+                              <option value="PICT">-</option>
+                              <option value="PMI">-</option>
+                              <option value="PMRS">-</option>
+                              <option value="PNSC">-</option>
+                              <option value="POML">-</option>
+                              <option value="POWER">-</option>
+                              <option value="PPP">-</option>
+                              <option value="PPVC">-</option>
+                              <option value="PRET">-</option>
+                              <option value="PRWM">-</option>
+                              <option value="PSO">-</option>
+                              <option value="PSYL">-</option>
+                              <option value="QUET">-</option>
+                              <option value="QUICE">-</option>
+                              <option value="RCML">-</option>
+                              <option value="RUBY">-</option>
+                              <option value="SALT">-</option>
+                              <option value="SANSM">-</option>
+                              <option value="SAPL">-</option>
+                              <option value="SAPT">-</option>
+                              <option value="SASML">-</option>
+                              <option value="SEL">-</option>
+                              <option value="SERF">-</option>
+                              <option value="SFL">-</option>
+                              <option value="SFLL">-</option>
+                              <option value="SHCI">-</option>
+                              <option value="SHDT">-</option>
+                              <option value="SHFA">-</option>
+                              <option value="SHJS">-</option>
+                              <option value="SIEM">-</option>
+                              <option value="SJTM">-</option>
+                              <option value="SLYT">-</option>
+                              <option value="SML">-</option>
+                              <option value="SMTM">-</option>
+                              <option value="SRSM">-</option>
+                              <option value="SSML">-</option>
+                              <option value="STJT">-</option>
+                              <option value="STML">-</option>
+                              <option value="TATM">-</option>
+                              <option value="TGL">-</option>
+                              <option value="THALL">-</option>
+                              <option value="TOWL">-</option>
+                              <option value="TPLP">-</option>
+                              <option value="TREET">-</option>
+                              <option value="TSBL">-</option>
+                              <option value="TSML">-</option>
+                              <option value="UBDL">-</option>
+                              <option value="UBL-FUNDS">-</option>
+                              <option value="UDPL">-</option>
+                              <option value="UVIC">-</option>
+                              <option value="WAHN">-</option>
+                              <option value="WHALE">-</option>
+                              <option value="786">786 Investments Limited</option>
+                              <option value="ABOT">Abbott Laboratories (Pakistan) Limited</option>
+                              <option value="AGSML">Abdullah Shah Ghazi Sugar Mills Limited</option>
+                              <option value="ADAMS">Adam Sugar Mills Limited</option>
+                              <option value="AICL">Adamjee Insurance Company Limited</option>
+                              <option value="ALIFE">Adamjee Life Assurance Company Limited</option>
+                              <option value="ADOS">Ados Pakistan Limited</option>
+                              <option value="AEL">AEL Textile Limited</option>
+                              <option value="AGHA">Agha Steel Ind.Ltd</option>
+                              <option value="AGP">AGP Limited</option>
+                              <option value="AGIL">Agriauto Industries Limited</option>
+                              <option value="AGL">Agritech Limited</option>
+                              <option value="AAL">Agro Allianz Limited</option>
+                              <option value="AHTM">Ahmad Hassan Textile Mills Limited</option>
+                              <option value="AHTM_Q4-2015">Ahmad Hassan Textile Mills Limited</option>
+                              <option value="AIRLINK">Air Link Communication Limited</option>
+                              <option value="ASLCPS">Aisha Steel Convt Pref Right</option>
+                              <option value="ASL">Aisha Steel Mills Limited</option>
+                              <option value="ASRL">Aisha Steel Mills Limited</option>
+                              <option value="AKDCL">AKD Capital Limited</option>
+                              <option value="AKDHL">AKD Hospitality Limited</option>
+                              <option value="AKDSL">AKD Securities Limited</option>
+                              <option value="AKZO">Akzo Nobel Pakistan Limited</option>
+                              <option value="ASC">Al Shaheer Corporation Limited</option>
+                              <option value="AABS">Al-Abbas Sugar Mills Limited</option>
+                              <option value="AASM">Al-Abid Silk Mills Limited</option>
+                              <option value="AASM">AL-Abid Silk Mills Limited.</option>
+                              <option value="AGTL">Al-Ghazi Tractors Limited</option>
+                              <option value="AKGL">Al-Khair Gadoon Limited</option>
+                              <option value="ALNRS">Al-Noor Sugar Mills Limited</option>
+                              <option value="ALQT">Al-Noor Sugar Mills Limited</option>
+                              <option value="AATM">Ali Asghar Textile Mills Limited</option>
+                              <option value="AWTX">Allawasaya Tex. & Finishing Mills Ltd</option>
+                              <option value="AWTX">Allawasaya Textile & Finishing Mills Limited</option>
+                              <option value="ABL">Allied Bank Limited</option>
+                              <option value="ARM">Allied Rental Modaraba</option>
+                              <option value="ALTN">Altern Energy Limited</option>
+                              <option value="ASTL">Amreli Steels Limited</option>
+                              <option value="AMTEX">Amtex Limited</option>
+                              <option value="ANTM">AN Textile Mills Limited</option>
+                              <option value="ANSM">Ansari Sugar Mills Limited</option>
+                              <option value="AMBL">Apna Microfinance Bank Limited</option>
+                              <option value="APOT">Apollo Textile Mills Limited</option>
+                              <option value="ARPL">Archroma Pakistan Limited</option>
+                              <option value="ARCTM">Arctic Textile Mills Limited</option>
+                              <option value="AHCL">Arif Habib Corporation Limited</option>
+                              <option value="AHL">Arif Habib Limited</option>
+                              <option value="ARMG">ARM Green Industries Limited</option>
+                              <option value="ARPAK">Arpak International Investments Ltd.</option>
+                              <option value="AEL">Arshad Energy Limited</option>
+                              <option value="ADMM">Artistic Denim Mills Limited</option>
+                              <option value="ARUJ">Aruj Industries Limited</option>
+                              <option value="ASHT">Ashfaq Textile Mills Limited</option>
+                              <option value="ASIC">Asia Insurance Company Limited</option>
+                              <option value="ASTM">Asim Textile Mills Limited</option>
+                              <option value="AKBL">Askari Bank Limited</option>
+                              <option value="AGIC">Askari General Insurance Company Limited</option>
+                              <option value="ALAC">Askari Life Assurance Company Limited</option>
+                              <option value="PREMA">At-Tahur Limited</option>
+                              <option value="ATBA">Atlas Battery Limited</option>
+                              <option value="ATLH">Atlas Honda Limited</option>
+                              <option value="ATIL">Atlas Insurance Limited</option>
+                              <option value="ACPL">Attock Cement Pakistan Limited</option>
+                              <option value="APL">Attock Petroleum Limited</option>
+                              <option value="ATRL">Attock Refinery Limited</option>
+                              <option value="AVN">Avanceon Limited</option>
+                              <option value="AWWAL">Awwal Modaraba</option>
+                              <option value="AYTM">Ayesha Textile Mills Limited</option>
+                              <option value="ANL">Azgard Nine Limited</option>
+                              <option value="BFMOD">B.F. Modaraba</option>
+                              <option value="BRRG">B.R.R Guardian Limited</option>
+                              <option value="BRR">B.R.R. Guardian Modaraba</option>
+                              <option value="BAFS">Baba Farid Sugar Mills Limited</option>
+                              <option value="BCML">Babri Cotton Mills Limited</option>
+                              <option value="BGL">Balochistan Glass Limited</option>
+                              <option value="BPBL">Balochistan Particle Board Limited</option>
+                              <option value="BGL">Baluchistan Glass Limited</option>
+                              <option value="BWHL">Baluchistan Wheels Limited</option>
+                              <option value="BAHL">Bank AL Habib Limited</option>
+                              <option value="BAFL">Bank Alfalah Limited</option>
+                              <option value="BML">Bank Makramah Limited</option>
+                              <option value="BIPL">BankIslami Pakistan Limited</option>
+                              <option value="BNWM">Bannu Woollen Mills Limited</option>
+                              <option value="BFAGRO">Barkat Frisian Agro Limited</option>
+                              <option value="BATA">Bata Pakistan Limited</option>
+                              <option value="BAPL">Bawany Air Products Limited</option>
+                              <option value="BECO">Beco Steel Limited</option>
+                              <option value="BELA">Bela Automotives Limited</option>
+                              <option value="BERG">Berger Paints Pakistan Limited</option>
+                              <option value="BWCL">Bestway Cement Limited</option>
+                              <option value="BFBIO">BF Biosciences Limited</option>
+                              <option value="BHAT">Bhanero Textile Mills Limited</option>
+                              <option value="BIFO">Biafo Industries Limited</option>
+                              <option value="BBFL">Big Bird Foods Limited</option>
+                              <option value="BILF">Bilal Fibres Limited</option>
+                              <option value="BIPLS">BIPL Securities Limited</option>
+                              <option value="BTL">Blessed Textiles Limited</option>
+                              <option value="BLUEX">Blue-Ex Limited</option>
+                              <option value="GEMBLUEX">Blue-Ex Limited (GEM)</option>
+                              <option value="BCL">Bolan Castings Limited</option>
+                              <option value="BROT">Brothers Textile Mills Limited</option>
+                              <option value="BNL">Bunnys Limited</option>
+                              <option value="GEMBCEM">Burj Clean Energy Modaraba(GEM)</option>
+                              <option value="BPL">Burshane LPG (Pakistan) Limited</option>
+                              <option value="BUXL">Buxly Paints Limited</option>
+                              <option value="BYCO">Byco Petroleum Pakistan Limited</option>
+                              <option value="CASH">Calcorp Limited</option>
+                              <option value="CPAL">Capital Assets Leasing Corporation</option>
+                              <option value="CPAL">Capital Assets Leasing Corporation Limited</option>
+                              <option value="CENI">Century Insurance Company Limited</option>
+                              <option value="CEPB">Century Paper & Board Mills Limited</option>
+                              <option value="CWSM">Chakwal Spinning Mills Limited</option>
+                              <option value="CHAS">Chashma Sugar Mills Limited</option>
+                              <option value="CHBL">Chenab Limited</option>
+                              <option value="CHCC">Cherat Cement Company Limited</option>
+                              <option value="CPPL">Cherat Packaging Limited</option>
+                              <option value="CPHL">Citi Pharma Ltd.</option>
+                              <option value="CLOV">Clover Pakistan Limited</option>
+                              <option value="CNERGY">Cnergyico PK  Limited</option>
+                              <option value="COLG">Colgate-Palmolive (Pakistan) Limited</option>
+                              <option value="CTM">Colony Textile Mills Limited</option>
+                              <option value="CLVL">Cordoba Logistics & Ventures Limited</option>
+                              <option value="CCM">Crescent Cotton Mills Limited</option>
+                              <option value="CFL">Crescent Fibres Limited</option>
+                              <option value="CJPL">Crescent Jute Products Limited</option>
+                              <option value="CSM">Crescent Standard Modaraba</option>
+                              <option value="CSIL">Crescent Star Insurance Limited</option>
+                              <option value="CSAP">Crescent Steel & Allied Products Limited</option>
+                              <option value="CYAN">Cyan Limited</option>
+                              <option value="DGKC">D.G. Khan Cement Company Limited</option>
+                              <option value="DMC">D.M. Corporation Limited.</option>
+                              <option value="DMIL">D.M. Industries Limited</option>
+                              <option value="DMTX">D.M. Textile Mills Limited</option>
+                              <option value="DSIL">D.S. Industries Limited</option>
+                              <option value="DCTL">Dadabhoy Construction Technology Limited</option>
+                              <option value="DADX">Dadex Eternit Limited</option>
+                              <option value="DNCC">Dandot Cement Company Limited</option>
+                              <option value="DSML">Dar-es-Salaam Textile Mills Limited</option>
+                              <option value="DAAG">Data Agro Limited</option>
+                              <option value="DATM">Data Textiles Limited</option>
+                              <option value="DEL">Dawood Equities Limited</option>
+                              <option value="DAWH">Dawood Hercules Corporation Limited</option>
+                              <option value="DCH">Dawood Hercules Corporation Limited</option>
+                              <option value="DLL">Dawood Lawrencepur Limited</option>
+                              <option value="DOL">Descon Oxychem Limited</option>
+                              <option value="DWAE">Dewan Automotive Engineering Limited</option>
+                              <option value="DCL">Dewan Cement Limited</option>
+                              <option value="DFML">Dewan Farooque Motors Limited</option>
+                              <option value="DFSM">Dewan Farooque Spinning Mills Limited</option>
+                              <option value="DKTM">Dewan Khalid Textile Mills Limited</option>
+                              <option value="DMTM">Dewan Mushtaq Textile Mills Limited</option>
+                              <option value="DSFL">Dewan Salman Fibre Limited</option>
+                              <option value="DWSM">Dewan Sugar Mills Limited</option>
+                              <option value="DWTM">Dewan Textile Mills Limited</option>
+                              <option value="DHPL">DH Partners Limited</option>
+                              <option value="DIIL">Diamond Industries Limited</option>
+                              <option value="DINT">Din Textile Mills Limited</option>
+                              <option value="DCR">Dolmen City REIT</option>
+                              <option value="DSL">Dost Steels Limited</option>
+                              <option value="DKL">Drekkar Kingsway Limited</option>
+                              <option value="DYNO">Dynea Pakistan Limited</option>
+                              <option value="EWIC">East West Insurance Company Limited</option>
+                              <option value="EWLA">East West Life Assurance Company Limited</option>
+                              <option value="ECOP">Ecopack Limited</option>
+                              <option value="EFGH">EFG Hermes Pakistan Limited</option>
+                              <option value="EFUG">EFU General Insurance Limited</option>
+                              <option value="EFUL">EFU Life Assurance Limited</option>
+                              <option value="ELCM">Elahi Cotton Mills Limited</option>
+                              <option value="ELSM">Ellcot Spinning Mills Limited</option>
+                              <option value="EMCO">Emco Industries Limited</option>
+                              <option value="ENGRO">Engro Corporation Limited</option>
+                              <option value="EFERT">Engro Fertilizers Limited</option>
+                              <option value="EFOODS">Engro Foods Limited</option>
+                              <option value="ENGROH">Engro Holdings Limited</option>
+                              <option value="EPCL">Engro Polymer & Chemicals Limited</option>
+                              <option value="EPQL">Engro Powergen Qadirpur Limited</option>
+                              <option value="ESBL">Escorts Investment Bank Limited</option>
+                              <option value="EXIDE">Exide Pakistan Limited</option>
+                              <option value="FASM">Faisal Spinning Mills Limited</option>
+                              <option value="FRSM">Faran Sugar Mills Limited</option>
+                              <option value="FCL">Fast Cables Limited</option>
+                              <option value="FIL">Fateh Industries Limited</option>
+                              <option value="FSWL">Fateh Sports Wear Limited</option>
+                              <option value="FATIMA">Fatima Fertilizer Company Limited</option>
+                              <option value="FCCL">Fauji Cement Company Limited</option>
+                              <option value="FFBL">Fauji Fertilizer Bin Qasim Limited</option>
+                              <option value="FFC">Fauji Fertilizer Company Limited</option>
+                              <option value="FFL">Fauji Foods Limited</option>
+                              <option value="FABL">Faysal Bank Limited</option>
+                              <option value="FZCM">Fazal Cloth Mills Limited</option>
+                              <option value="FECTC">Fecto Cement Limited</option>
+                              <option value="FML">Feroze1888 Mills Limited</option>
+                              <option value="FEROZ">Ferozsons Laboratories Limited</option>
+                              <option value="FANM">First Al-Noor Modaraba</option>
+                              <option value="FCEL">First Capital Equities Limited</option>
+                              <option value="FCSC">First Capital Securities Corporation</option>
+                              <option value="FCSC">First Capital Securities Corporation Limited</option>
+                              <option value="FCONM">First Constellation Modaraba</option>
+                              <option value="FCIBL">First Credit and Investment Bank Limited</option>
+                              <option value="FDIBL">First Dawood Investment Bank Limited</option>
+                              <option value="FDPL">First Dawood Properties Limited</option>
+                              <option value="FECM">First Elite Capital Modaraba</option>
+                              <option value="FEM">First Equity Modaraba</option>
+                              <option value="FFLM">First Fidelity Leasing Modaraba</option>
+                              <option value="FHAM">First Habib Modaraba</option>
+                              <option value="FIBLM">First IBL Modaraba</option>
+                              <option value="FIMM">First Imrooz Modaraba</option>
+                              <option value="FNBM">First National Bank Modaraba</option>
+                              <option value="FNEL">First National Equities Limited</option>
+                              <option value="PAKMI">First Pak Modaraba</option>
+                              <option value="FPRM">First Paramount Modaraba</option>
+                              <option value="PMI">First Prudential Modaraba</option>
+                              <option value="FPJM">First Punjab Modaraba</option>
+                              <option value="FTMM">First Treet Manufacturing Modaraba</option>
+                              <option value="FTSM">First Tri-Star Modaraba</option>
+                              <option value="FUDLM">First UDL Modaraba</option>
+                              <option value="FLYNG">Flying Cement Company Limited</option>
+                              <option value="FCEPL">Frieslandcampina Engro Pakistan Limited</option>
+                              <option value="FCEPL">Frieslandcampins Engro Foods Limited</option>
+                              <option value="FRCL">Frontier Ceramics Limited</option>
+                              <option value="GTECH">G3 Technologies Limited</option>
+                              <option value="GADT">Gadoon Textile Mills Limited</option>
+                              <option value="GAEL">Gadoon Textile Mills Limited</option>
+                              <option value="GAMON">Gammon Pakistan Limited</option>
+                              <option value="GATI">Gatron (Industries) Limited</option>
+                              <option value="GAL">Ghandhara Automobiles Limited</option>
+                              <option value="GHNI">Ghandhara Industries Limited</option>
+                              <option value="GHNL">Ghandhara Nissan Limited</option>
+                              <option value="GTYR">Ghandhara Tyre & Rubber Company Limited</option>
+                              <option value="GAIL">Ghani Automobile Industries Limited</option>
+                              <option value="GCIL">Ghani Chemical Industries Limited</option>
+                              <option value="GCWL">Ghani Chemworld Limited</option>
+                              <option value="GDL">Ghani Dairies Limited</option>
+                              <option value="GGL">Ghani Gases Limited</option>
+                              <option value="GHGL">Ghani Glass Limited</option>
+                              <option value="GGGL">Ghani Global Glass Limited</option>
+                              <option value="GGL">Ghani Global Holding Limited</option>
+                              <option value="GGL">Ghani Global Holdings Limited</option>
+                              <option value="GVGL">Ghani Value Glass Limited</option>
+                              <option value="GWLC">Gharibwal Cement Limited</option>
+                              <option value="GFIL">Ghazi Fabrics International Limited</option>
+                              <option value="GLPL">Gillette Pakistan Limited</option>
+                              <option value="GRAYS">Gillette Pakistan Limited</option>
+                              <option value="GLAT">Glamour Textile Mills Limited</option>
+                              <option value="GSKCH">GlaxoSmithKline Consumer Healthcare</option>
+                              <option value="GSKCH">GlaxoSmithKline Consumer Healthcare Pakistan Limited</option>
+                              <option value="GLAXO">GlaxoSmithKline Pakistan Limited</option>
+                              <option value="GRR">Globe Residency Reit</option>
+                              <option value="GLOT">Globe Textile Mills Limited</option>
+                              <option value="GOC">GOC (Pak) Limited.</option>
+                              <option value="GASF">Golden Arrow Selected Stocks</option>
+                              <option value="GASF">Golden Arrow Selected Stocks Fund Limited</option>
+                              <option value="GIL">Good Luck Industries Ltd.</option>
+                              <option value="GRYL">Grays Leasing Limited</option>
+                              <option value="GATM">Gul Ahmed Textile Mills Limited</option>
+                              <option value="GUSM">Gulistan Spinning Mills Limited</option>
+                              <option value="GUTM">Gulistan Textile Mills Limited</option>
+                              <option value="GSPM">Gulshan Spinning Mills Limited</option>
+                              <option value="HBL">Habib Bank Limited</option>
+                              <option value="HICL">Habib Insurance Company Limited</option>
+                              <option value="HMM">Habib Metro Mod</option>
+                              <option value="HMB">Habib Metropolitan Bank Limited</option>
+                              <option value="HRPL">Habib Rice Product Limited.</option>
+                              <option value="HABSM">Habib Sugar Mills Limited</option>
+                              <option value="HAL">Habib-ADM Limited</option>
+                              <option value="HAFL">Hafiz Limited</option>
+                              <option value="HMIM">Haji Mohammad Ismail Mills Limited</option>
+                              <option value="HAEL">Hala Enterprises Limited</option>
+                              <option value="HALEON">Haleon Pakistan Limited</option>
+                              <option value="HALEON">Haleon Pakistan Limited(Formerly GSKCH Pak Ltd)</option>
+                              <option value="HCL">Hallmark Company Limited</option>
+                              <option value="HATM">Hamid Textile Mills Limited</option>
+                              <option value="HASCOL">Hascol Petroleum Limited</option>
+                              <option value="HWQS">Haseeb Waqas Sugar Mills Limited</option>
+                              <option value="HACC">Hashimi Can Company Limited</option>
+                              <option value="HADC">Haydari Construction Company Limited</option>
+                              <option value="HTL">Hi-Tech Lubricants Limited</option>
+                              <option value="HINOON">Highnoon Laboratories Limited</option>
+                              <option value="HINO">Hinopak Motors Limited</option>
+                              <option value="HIRAT">Hira Textile Mills Limited</option>
+                              <option value="HPL">Hoechst Pakistan Limited</option>
+                              <option value="HCAR">Honda Atlas Cars (Pakistan) Limited</option>
+                              <option value="HSPI">Huffaz Seamless Pipe Industries Limited</option>
+                              <option value="HUMNL">Hum Network Limited</option>
+                              <option value="HUSS">Hum Network Limited</option>
+                              <option value="HUSI">Husein Industries Limited</option>
+                              <option value="HSM">Husein Sugar Mills Limited</option>
+                              <option value="IBLHL">IBL HealthCare Limited</option>
+                              <option value="IBFL">Ibrahim Fibres Limited</option>
+                              <option value="ICCI">ICC Industries Limited</option>
+                              <option value="ICCT">ICC Textiles Limited</option>
+                              <option value="ICI">ICI Pakistan Limited</option>
+                              <option value="IDSM">Ideal Spinning Mills Limited</option>
+                              <option value="IDRT">Idrees Textile Mills Limited</option>
+                              <option value="IGIHL">IGI Holdings Limited</option>
+                              <option value="IGIIL">IGI Insurance Limited</option>
+                              <option value="IGIBL">IGI Investment Bank Limited</option>
+                              <option value="IGIL">IGI Life Insurance Limited</option>
+                              <option value="IMAGE">Image Pakistan Limited</option>
+                              <option value="IREIT">Image Reit</option>
+                              <option value="IML">Imperial  Limited</option>
+                              <option value="IMSL">Imperial Sugar Limited</option>
+                              <option value="IDYM">Indus Dyeing & Manufacturing Co. Limited</option>
+                              <option value="IFSL">Indus Dyeing & Manufacturing Co. Limited</option>
+                              <option value="INDU">Indus Motor Company Limited</option>
+                              <option value="ILP">Interloop Limited</option>
+                              <option value="IMS">Intermarket Securities Limited</option>
+                              <option value="INIL">International Industries Limited</option>
+                              <option value="INKL">International Knitwear Limited</option>
+                              <option value="IPAK">International Packaging Films Limited</option>
+                              <option value="ISL">International Steels Limited</option>
+                              <option value="ICIBL">Invest Capital Investment Bank Limited</option>
+                              <option value="ISTM">Ishaq Textile Mills Limited</option>
+                              <option value="ISHT">Ishtiaq Textile Mills Limited</option>
+                              <option value="ILTM">Island Textile Mills Limited</option>
+                              <option value="ISIL">Ismail Industries Limited</option>
+                              <option value="ITANZ">Itanz Technologies Limited</option>
+                              <option value="ITTEFAQ">Ittefaq Iron Industries Limited</option>
+                              <option value="ICL">Ittehad Chemicals Limted</option>
+                              <option value="IDEN">Ittehad Chemicals Limted</option>
+                              <option value="JATM">J.A. Textile Mills Limited</option>
+                              <option value="JKSM">J.K. Spinning Mills Limited</option>
+                              <option value="JSCL">Jahangir Siddiqui & Co. Ltd.</option>
+                              <option value="JDMT">Janana De Malucho Textile Mills Limited</option>
+                              <option value="JPGL">Japan Power Generation Limited</option>
+                              <option value="JSML">Jauharabad Sugar Mills Limited</option>
+                              <option value="JVDC">Javedan Corporation Limited</option>
+                              <option value="JVDCPS">Javedan Corporation Preference</option>
+                              <option value="JDWS">JDW Sugar Mills Limited</option>
+                              <option value="JOPP">Johnson & Phillips (Pakistan) Limited</option>
+                              <option value="JSBL">JS Bank Limited</option>
+                              <option value="JSGBETF">JS Global Banking Sector(ETF)</option>
+                              <option value="JSGCL">JS Global Capital Limited</option>
+                              <option value="JSIL">JS Investments Limited</option>
+                              <option value="JGICL">Jubilee General Insurance Company Limited</option>
+                              <option value="JGICL">Jubilee General Insurance Company Ltd.</option>
+                              <option value="JLICL">Jubilee Life Insurance Company Limited</option>
+                              <option value="JUBS">Jubilee Spinning & Weaving Mills Ltd.</option>
+                              <option value="KEL">K-Electric Limited</option>
+                              <option value="KCL">Karam Ceramics Limited</option>
+                              <option value="KASBM">KASB Modaraba</option>
+                              <option value="KASBSL">KASB Modaraba</option>
+                              <option value="KPUS">Khairpur Sugar Mills Limited</option>
+                              <option value="KSTM">Khalid Siraj Textile Mills Limited</option>
+                              <option value="KHSM">Khurshid Spinning Mills Limited</option>
+                              <option value="KHYT">Khyber Textile Mills Limited</option>
+                              <option value="KHTC">Khyber Tobacco Company Limited</option>
+                              <option value="KOHC">Kohat Cement Company Limited</option>
+                              <option value="KOHTM">Kohat Textile Mills Limited</option>
+                              <option value="KOHE">Kohinoor Energy Limited</option>
+                              <option value="KOIL">Kohinoor Industries Limited</option>
+                              <option value="KML">Kohinoor Mills Limited</option>
+                              <option value="KOHP">Kohinoor Power Company Limited</option>
+                              <option value="KOSM">Kohinoor Spinning Mills Limited</option>
+                              <option value="KTML">Kohinoor Textile Mills Limited</option>
+                              <option value="KAPCO">Kot Addu Power Company Limited</option>
+                              <option value="KSBP">KSB Pumps Company Limited</option>
+                              <option value="LPCL">Lafarge Pak Cement</option>
+                              <option value="LPL">Lalpir Power Limited</option>
+                              <option value="LMSM">Landmark Spinning Industries Limited</option>
+                              <option value="LEUL">Leather Up Limited</option>
+                              <option value="LPGL">Leiner Pak Gelatine Limited</option>
+                              <option value="LINDE">Linde Pakistan Limited</option>
+                              <option value="LIVEN">Liven Pharma Limited</option>
+                              <option value="LOADS">Loads Limited</option>
+                              <option value="LOTCHEM">Lotte Chemical Pakistan Limited</option>
+                              <option value="LSECL">LSE Capital Limited.</option>
+                              <option value="LSEFSL">LSE Financial Services Limited.</option>
+                              <option value="LSEPL">LSE Proptech Limited</option>
+                              <option value="LSEVL">LSE Ventures Limited</option>
+                              <option value="LUCK">Lucky Cement Limited</option>
+                              <option value="LCI">Lucky Core Industries Limited</option>
+                              <option value="MACFL">MACPAC Films Limited</option>
+                              <option value="MACTER">Macter International Limited</option>
+                              <option value="MEHT">Mahmood Textile Mills Limited</option>
+                              <option value="MWMP">Mandviwala Mauser Plastic Industries</option>
+                              <option value="MWMP">Mandviwala Mauser Plastic Industries Limited</option>
+                              <option value="MLCF">Maple Leaf Cement Factory Limited</option>
+                              <option value="MQTM">Maqbool Textile Mills Limited</option>
+                              <option value="MARI">Mari Energies Limited</option>
+                              <option value="MARI">Mari Petroleum Company Limited</option>
+                              <option value="MSOT">Masood Textile Mills Limited</option>
+                              <option value="MSOTPS">Masood Textile Preference</option>
+                              <option value="MFL">Matco Foods Limited</option>
+                              <option value="MCB">MCB Bank Limited</option>
+                              <option value="MCBIM">MCB Investment Management Limited.</option>
+                              <option value="MCBAH">MCB-Arif Habib Savings and Invest</option>
+                              <option value="MCBAH">MCB-Arif Habib Savings and Investments Limited</option>
+                              <option value="MDTL">Media Times Limited</option>
+                              <option value="MEBL">Meezan Bank Limited</option>
+                              <option value="MZNPETF">Meezan Pakistan ETF</option>
+                              <option value="MEHT">Mehmood Textile Mills Limited</option>
+                              <option value="MRNS">Mehran Sugar Mills Limited</option>
+                              <option value="MERIT">Merit Packaging Limited</option>
+                              <option value="META">MetaTech Health Limited</option>
+                              <option value="META">MetaTech Trading Limited</option>
+                              <option value="MSCL">Metropolitan Steel Corporation Limited</option>
+                              <option value="MTIL">Mian Textile Industries Limited</option>
+                              <option value="MTL">Millat Tractors Limited</option>
+                              <option value="MIRKS">Mirpurkhas Sugar Mills Limited</option>
+                              <option value="MIRKS">Mirpurkhas Sugar Mills Ltd.</option>
+                              <option value="MZSM">Mirza Sugar Mills Limited</option>
+                              <option value="MFFL">Mitchells Fruit Farms Limited</option>
+                              <option value="MMBLTFC">Mobilink Microfinance Bank TFC</option>
+                              <option value="MODAM">Modaraba Al-Mali</option>
+                              <option value="MFTM">Mohammad Farooq Textile Mills Limited</option>
+                              <option value="MUBT">Mubarak Textile Mills Limited</option>
+                              <option value="GEMMEL">Mughal Energy Limited(GEM)</option>
+                              <option value="MUGHAL">Mughal Iron & Steel Industries Limited</option>
+                              <option value="MUGHALSC">Mughal Steel Sukuk</option>
+                              <option value="MUKT">Mukhtar Textile Mills Limited</option>
+                              <option value="MUREB">Murree Brewery Company Limited</option>
+                              <option value="NPSM">N. P. Spinning Mills Ltd.</option>
+                              <option value="NPSM">N.P. Spinning Mills Limited</option>
+                              <option value="NATM">Nadeem Textile Mills Limited</option>
+                              <option value="NAGC">Nagina Cotton Mills Limited</option>
+                              <option value="NBP">National Bank of Pakistan</option>
+                              <option value="NATF">National Foods Limited</option>
+                              <option value="NRL">National Refinery Limited</option>
+                              <option value="NCML">Nazir Cotton Mills Limited</option>
+                              <option value="NESTLE">Nestle Pakistan Limited</option>
+                              <option value="GEMNETS             ">Nets International Communication Limited</option>
+                              <option value="NETSOL">NetSol Technologies Limited</option>
+                              <option value="NEXT">Next Capital Limited</option>
+                              <option value="NIB">Next Capital Limited</option>
+                              <option value="NICL">Nimir Industrial Chemicals Limited</option>
+                              <option value="NRSL">Nimir Resins Limited</option>
+                              <option value="NCL">Nishat Chunian Limited</option>
+                              <option value="NCPL">Nishat Chunian Power Limited</option>
+                              <option value="NML">Nishat Mills Limited</option>
+                              <option value="NPL">Nishat Power Limited</option>
+                              <option value="NONS">Noon Sugar Mills Limited</option>
+                              <option value="NOPK">Noon Sugar Mills Limited</option>
+                              <option value="OCTOPUS">Octopus Digital Limited</option>
+                              <option value="OGDC">Oil & Gas Development Company Limited</option>
+                              <option value="OBOY">Oilboy Energy Limited</option>
+                              <option value="OBOY">Oilboy Engergy Limited</option>
+                              <option value="OLPL">OLP Financial Services Pakistan Limited</option>
+                              <option value="OLPM">OLP Modaraba</option>
+                              <option value="OML">Olympia Mills Limited</option>
+                              <option value="ORM">Orient Rental Mod</option>
+                              <option value="OLPL">Orix Leasing Pakistan Limited</option>
+                              <option value="OLSM">Orix Leasing Pakistan Limited</option>
+                              <option value="OLTM">Orix Leasing Pakistan Limited</option>
+                              <option value="ORIXM">Orix Modaraba</option>
+                              <option value="OTSU">Otsuka Pakistan Limited</option>
+                              <option value="PACE">Pace (Pakistan) Limited</option>
+                              <option value="PKGS">Packages Limited</option>
+                              <option value="GEMPAPL">Pak Agro Packaging Limited(GEM)</option>
+                              <option value="PAKD">Pak Datacom Limited</option>
+                              <option value="PAEL">Pak Elektron Limited</option>
+                              <option value="PAKCEM">Pak Elektron Limited</option>
+                              <option value="PELPS">Pak Elektron Preference</option>
+                              <option value="PESC1">Pak Energy(Sukuk)</option>
+                              <option value="PAKL">Pak Leather Crafts Limited</option>
+                              <option value="PAKQATAR">Pak Qatar Family Takaful Limited</option>
+                              <option value="PQGTL">Pak Qatar General Takaful Limited</option>
+                              <option value="PSMC">Pak Suzuki Motor Company Limited</option>
+                              <option value="PGLC">Pak-Gulf Leasing Company Limited</option>
+                              <option value="PKGP">Pakgen Power Limited</option>
+                              <option value="PABC">Pakistan Aluminium Beverage Cans Limited</option>
+                              <option value="PCAL">Pakistan Cables Limited</option>
+                              <option value="PECO">Pakistan Engineering Company Limited</option>
+                              <option value="PGCL">Pakistan Gum & Chemicals Limited</option>
+                              <option value="PHDL">Pakistan Hotels Developers Limited</option>
+                              <option value="PIAA">Pakistan International Airlines Corp</option>
+                              <option value="PIAA">Pakistan International Airlines Corporation Limited</option>
+                              <option value="PIBTL">Pakistan International Bulk Terminal</option>
+                              <option value="PIBTL">Pakistan International Bulk Terminal Limited</option>
+                              <option value="PICT">Pakistan International Container</option>
+                              <option value="PICT">Pakistan International Container Terminal Limited</option>
+                              <option value="PNSC">Pakistan National Shipping Corporation</option>
+                              <option value="PNSC">Pakistan National Shipping Corporation Limited</option>
+                              <option value="POAF">Pakistan National Shipping Corporation Limited</option>
+                              <option value="POL">Pakistan Oilfields Limited</option>
+                              <option value="PAKOXY">Pakistan Oxygen Limited</option>
+                              <option value="PPP">Pakistan Paper Products Limited</option>
+                              <option value="PPL">Pakistan Petroleum Limited</option>
+                              <option value="PPVC">Pakistan PVC Limited</option>
+                              <option value="PRL">Pakistan Refinery Limited</option>
+                              <option value="PAKRI">Pakistan Reinsurance Company Limited</option>
+                              <option value="PSEL">Pakistan Services Limited</option>
+                              <option value="PSO">Pakistan State Oil Company Limited</option>
+                              <option value="PSX">Pakistan Stock Exchange Limited</option>
+                              <option value="PSYL">Pakistan Synthetics Limited</option>
+                              <option value="PTCL">Pakistan Synthetics Limited</option>
+                              <option value="PTC">Pakistan Telecommunication Company Ltd</option>
+                              <option value="PAKT">Pakistan Tobacco Company Limited</option>
+                              <option value="PNGRS">Pangrio Sugar Mills Limited</option>
+                              <option value="PTL">Panther Tyres Ltd.</option>
+                              <option value="PASM">Paramount Spinning Mills Limited</option>
+                              <option value="PFSLTFC">Parwaz Green Bond TFC</option>
+                              <option value="PASL">Pervez Ahmed Consultancy Services Limited</option>
+                              <option value="PASL">Pervez Ahmed Consultancy Services Ltd.</option>
+                              <option value="PASL">Pervez Ahmed Securities Limited</option>
+                              <option value="PMPK">Philip Morris (Pakistan) Limited</option>
+                              <option value="PIAHCLA">PIA Holding Company Limited</option>
+                              <option value="PGF">PICIC Growth Fund</option>
+                              <option value="PIL">PICIC Insurance Limited</option>
+                              <option value="PIF">PICIC Investment Fund</option>
+                              <option value="PIOC">Pioneer Cement Limited</option>
+                              <option value="PIM">Popular Islamic Modaraba</option>
+                              <option value="POWER">Power Cement Limited</option>
+                              <option value="PINL">Premier Insurance Limited</option>
+                              <option value="PRET">Premium Textile Mills Limited</option>
+                              <option value="PRIC">Progressive Insurance Company Limited</option>
+                              <option value="PRWM">Prosperity Weaving Mills Limited</option>
+                              <option value="PCML">Punjab Cotton Mills Limited</option>
+                              <option value="POML">Punjab Oil Mills Limited</option>
+                              <option value="QTECH">Quantum Data Technologies Limited</option>
+                              <option value="QUET">Quetta Textile Mills Limited</option>
+                              <option value="QUICE">Quice Food Industries Limited</option>
+                              <option value="RMPL">Rafhan Maize Products Company Limited</option>
+                              <option value="RAVT">Ravi Textile Mills Limited</option>
+                              <option value="REDCO">Redco Textiles Limited</option>
+                              <option value="REST">Redco Textiles Limited</option>
+                              <option value="RCML">Reliance Cotton Spinning Mills Limited</option>
+                              <option value="RICL">Reliance Insurance Company Limited</option>
+                              <option value="RICL_">Reliance Insurance Company Limited</option>
+                              <option value="REWM">Reliance Weaving Mills Limited</option>
+                              <option value="RPL">Roshan Packages Limited</option>
+                              <option value="RUBY">Ruby Textile Mills Limited</option>
+                              <option value="RUPL">Rupali Polyester Limited</option>
+                              <option value="SGPL">S.G. Power Limited</option>
+                              <option value="SSOM">S.S.Oil Mills Limited</option>
+                              <option value="TDIL">S.S.Oil Mills Limited</option>
+                              <option value="SFAT">Safa Textiles Limited</option>
+                              <option value="SMCPL">Safe Mix Concrete Limited</option>
+                              <option value="SMCPL">Safe Mix Concrete Limited (Formerly Safe Mix Concrete Products Ltd.)</option>
+                              <option value="SPWL">Saif Power Limited</option>
+                              <option value="SAIF">Saif Textile Mills Limited</option>
+                              <option value="SJTM">Sajjad Textile Mills Limited</option>
+                              <option value="SKRS">Sakrand Sugar Mills Limited</option>
+                              <option value="SALT">Salfi Textile Mills Limited</option>
+                              <option value="SLYT">Sally Textile Mills Limited</option>
+                              <option value="SANE">Salman Noman Enterprises Limited</option>
+                              <option value="SBL">Samba Bank Limited</option>
+                              <option value="SMTM">Samin Textiles Limited</option>
+                              <option value="SNAI">Sana Industries Limited</option>
+                              <option value="SANSM">Sanghar Sugar Mills Limited</option>
+                              <option value="SAPL">Sanofi-Aventis Pakistan Limited</option>
+                              <option value="SFL">Sapphire Fibres Limited</option>
+                              <option value="SFTM">Sapphire Fibres Limited</option>
+                              <option value="SGML">Sapphire Fibres Limited</option>
+                              <option value="SAPT">Sapphire Textile Mills Limited</option>
+                              <option value="SARC">Sardar Chemical Industries Limited</option>
+                              <option value="SRSM">Sargodha Spinning Mills Limited</option>
+                              <option value="SSML">Saritow Spinning Mills Limited</option>
+                              <option value="SPCL">Saudi Pak Consultancy Company Limited</option>
+                              <option value="SPLC">Saudi Pak Leasing Company Limited</option>
+                              <option value="SAZEW">Sazgar Engineering Works Limited</option>
+                              <option value="SLGL">Secure Logistics Group Limited</option>
+                              <option value="SLGL">Secure Logistics-Trax Group Limited</option>
+                              <option value="SIBL">Security Investment Bank Limited</option>
+                              <option value="SLCL">Security Leasing Corporation Limited</option>
+                              <option value="SEPL">Security Papers Limited</option>
+                              <option value="SERF">Service Fabrics Limited</option>
+                              <option value="SGF">Service GlobalFootwear Limited</option>
+                              <option value="SRVI">Service Industries Limited</option>
+                              <option value="SERT">Service Industries Textiles Limited</option>
+                              <option value="SFLL">SFL Limited</option>
+                              <option value="SGABL">SG.Allied Businesses Limited</option>
+                              <option value="SGABL">SG.Allied Businsses Limited</option>
+                              <option value="STCL">Shabbir Tiles & Ceramics Limited</option>
+                              <option value="SHDT">Shadab Textile Mills Limited</option>
+                              <option value="SHCM">Shadman Cotton Mills Limited</option>
+                              <option value="SHCI">Shaffi Chemical Industries Limited</option>
+                              <option value="SHNI">Shaheen Insurance Company Limited</option>
+                              <option value="SHSML">Shahmurad Sugar Mills Limited</option>
+                              <option value="SHJS">Shahtaj Sugar Mills Limited</option>
+                              <option value="STJT">Shahtaj Textile Limited</option>
+                              <option value="SZTM">Shahzad Textile Mills Limited</option>
+                              <option value="SML">Shakarganj Limited</option>
+                              <option value="STML">Shams Textile Mills Limited</option>
+                              <option value="SHEL">Shell Pakistan Limited</option>
+                              <option value="SHEZ">Shezan International Limited</option>
+                              <option value="SCL">Shield Corporation Limited</option>
+                              <option value="SCM">Shield Corporation Limited</option>
+                              <option value="SHFA">Shifa International Hospitals Limited</option>
+                              <option value="STPL">Siddiqsons Tin Plate Limited</option>
+                              <option value="SIEM">Siemens (Pakistan) Engineering</option>
+                              <option value="SIEM">Siemens (Pakistan) Engineering Company Ltd.</option>
+                              <option value="SRR">Signature Residency Reit</option>
+                              <option value="SILK">Silkbank Limited</option>
+                              <option value="SASML">Sindh Abadgars Sugar Mills Limited</option>
+                              <option value="SINDM">Sindh Modaraba</option>
+                              <option value="SING">Singer Pakistan Limited</option>
+                              <option value="SITC">Sitara Chemical Industries Limited</option>
+                              <option value="SEL">Sitara Energy Limited</option>
+                              <option value="SPL">Sitara Peroxide Limited</option>
+                              <option value="SLL">SME Leasing Limited</option>
+                              <option value="SNBL">Soneri Bank Limited</option>
+                              <option value="SEPCO">Southern Electric Power Company Limited</option>
+                              <option value="SPEL">SPEL Limited</option>
+                              <option value="SCBPL">Standard Chartered Bank (Pak) Ltd</option>
+                              <option value="SCLL">Standard Chartered Bank (Pak) Ltd</option>
+                              <option value="SWL">Standard Worldwide Limited</option>
+                              <option value="STYLERS">Stylers International Limited</option>
+                              <option value="SUHJ">Suhail Jute Mills Limited</option>
+                              <option value="SNGP">Sui Northern Gas Ltd.</option>
+                              <option value="SNGP">Sui Northern Gas Pipelines Limited</option>
+                              <option value="SSGC">Sui Southern Gas Company Limited</option>
+                              <option value="SMBL">Summit Bank Limited</option>
+                              <option value="SUTM">Sunrays Textile Mills Limited</option>
+                              <option value="GEMSPNL">Supernet Limited</option>
+                              <option value="STL">Supernet Technologies Limited</option>
+                              <option value="SURC">Suraj Cotton Mills Limited</option>
+                              <option value="SYM">Symmetry Group Limited</option>
+                              <option value="SPEL">Synthetic Products Enterprises Limited</option>
+                              <option value="SYS">Systems Limited</option>
+                              <option value="TSML">Tandlianwala Sugar Mills Limited</option>
+                              <option value="TCORP">Tariq Corporation Limited</option>
+                              <option value="TGL">Tariq Glass Industries Limited</option>
+                              <option value="TATM">Tata Textile Mills Limited</option>
+                              <option value="TDIL">Tata Textile Mills Limited</option>
+                              <option value="TELE">Telecard Limited</option>
+                              <option value="TICL">Thal Industries Corporation Ltd.</option>
+                              <option value="THALL">Thal Limited</option>
+                              <option value="THAS">Thal Limited</option>
+                              <option value="THCCL">Thatta Cement Company Limited</option>
+                              <option value="TPLPL">Thatta Cement Company Limited</option>
+                              <option value="BOK">The Bank of Khyber</option>
+                              <option value="BOP">The Bank of Punjab</option>
+                              <option value="CECL">The Climax Engineering Company Limited</option>
+                              <option value="CRTM">The Crescent Textile Mills Limited</option>
+                              <option value="GTYR">The General Tyre & Rubber</option>
+                              <option value="HUBC">The Hub Power Company Limited</option>
+                              <option value="NSRM">The National Silk & Rayon Mills Limited</option>
+                              <option value="TOMCL">The Organic Meat Company Limited</option>
+                              <option value="GEMPACRA">The Pakistan Credit Rating Agency Ltd</option>
+                              <option value="PKGI">The Pakistan General Insurance Co. Ltd.</option>
+                              <option value="PKGI">The Pakistan General Insurance Company Limited</option>
+                              <option value="PMRS">The Premier Sugar Mills</option>
+                              <option value="SEARL">The Searle Company Limited</option>
+                              <option value="TICL">The Thal Industries Corporation Limited</option>
+                              <option value="UNIC">The United Insurance Company</option>
+                              <option value="UNIC">The United Insurance Company of Pakistan Limited</option>
+                              <option value="UVIC">The Universal Insurance Company Limited</option>
+                              <option value="TOWL">Towellers Limited</option>
+                              <option value="TPL">TPL Corp Limited</option>
+                              <option value="TPLSC">TPL Corp Ltd.(SC)</option>
+                              <option value="TPLI">TPL Insurance Limited</option>
+                              <option value="TPLL">TPL Life Insurance Limited</option>
+                              <option value="TPLP">TPL Properties Limited</option>
+                              <option value="TPLRF1">TPL REIT Fund I</option>
+                              <option value="TPLT">TPL Trakker Limited</option>
+                              <option value="TPLTFC3">TPLCorp(TFC3)</option>
+                              <option value="TBL">Treet Battery Limited.</option>
+                              <option value="TCLTC">Treet Corporation (Ptc)</option>
+                              <option value="TELE.">Treet Corporation (Ptc)</option>
+                              <option value="TREET">Treet Corporation Limited</option>
+                              <option value="TRG">TRG Pakistan Limited</option>
+                              <option value="TRIPF">Tri-Pack Films Limited</option>
+                              <option value="TSMF">Tri-Star Mutual Fund Limited</option>
+                              <option value="TRPOL">Tri-Star Polyester Limited</option>
+                              <option value="TSPL">Tri-Star Power Limited</option>
+                              <option value="TRIBL">Trust Investment Bank Limited</option>
+                              <option value="TRSM">Trust Modaraba</option>
+                              <option value="TRSM">Trust Modarba</option>
+                              <option value="TSBL">Trust Securities & Brokerage Limited</option>
+                              <option value="UMBLTFC1">U Microfinance Bank Limited(TFC1)</option>
+                              <option value="UDLI">UDL International Limited</option>
+                              <option value="UCAPM">Unicap Modaraba</option>
+                              <option value="UPFL">Unilever Pakistan Foods Limited</option>
+                              <option value="UBL">United Bank Limited</option>
+                              <option value="UBDL">United Brands Limited</option>
+                              <option value="UDPL">United Distributors Pakistan Limited</option>
+                              <option value="UNITY">Unity Foods Limited</option>
+                              <option value="GEMUNSL">Universal Network Systems Limited(GEM)</option>
+                              <option value="WAFI">Wafi Energy Pakistan Limited</option>
+                              <option value="WAHN">Wah Noble Chemicals Limited</option>
+                              <option value="WASL">Wasl Mobility Modaraba</option>
+                              <option value="WAVES">Waves Corporation Limited</option>
+                              <option value="WAVESAPP">Waves Home Appliances Limited</option>
+                              <option value="WHALE">Waves Home Appliances Limited</option>
+                              <option value="WAVES">Waves Singer Pakistan Limited</option>
+                              <option value="WTL">Worldcall Telecom Limited</option>
+                              <option value="WYETH">Wyeth Pakistan Limited</option>
+                              <option value="YOUW">Yousaf Weaving Mills Limited</option>
+                              <option value="ZAHID">Zahidjee Textile Mills Limited</option>
+                              <option value="ZHCM">Zahur Cotton Mills Limited</option>
+                              <option value="ZAL">Zarea Limited</option>
+                              <option value="ZELP">Zeal Pak Cement Factory Limited</option>
+                              <option value="ZTL">Zephyr Textiles Limited</option>
+                              <option value="ZIL">ZIL Limited</option>
+                              <option value="ZUMA">Zuma Resources Limited</option>
+                          </select>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <h2 id="annRpt"></h2>
+          <div class="table-responsive" id="yearlyData"></div>
+        </main>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="mheader"></h5>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body" id="yearlySmbData"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright 2018, All rights reserved  |  <a href="http://www.psx.com.pk/" target="_blank" class="footURLLink">www.psx.com.pk</a></p>
+      </div>
+      <!-- /.container -->
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jsonToTable.js"></script>
+    <script type="text/javascript">
+      function getYearlyData(t) {
+    $(".nav-link").removeClass("active"), $("#" + t).addClass("active"), $("#country").val("").attr("selected", "selected"), $("#yearlyData").empty(), $("#annRpt").html("Financial Report " + t), $.post("annQtrStmts.php", {
+        name: "get_yearly_data",
+        year: t
+    }, function(t) {
+        obj = JSON.parse(t), "" != obj ? $("#yearlyData").createTable(obj, {}) : $("#yearlyData").html('<table class="table table-striped table-sm"><tr><th>No Record for Current Year Exist!</th></tr></table>')
+    })
+}
+
+function getCompData() {
+    var t = $("#country").val();
+    $(".nav-link").removeClass("active"), $("#yearlyData").empty(), $("#annRpt").html("Financial Reports <br><br>" + $("#country option:selected").text() + " ( " + t + " )"), $.post("annQtrStmts.php", {
+        name: "get_comp_data",
+        smbCode: t
+    }, function(t) {
+        obj = JSON.parse(t), $("#yearlyData").createTable(obj, {})
+    })
+}
+
+function getCompYData(t, a, b) {
+    $("#yearlySmbData").empty(), $("#mheader").html(b), $.post("annQtrStmts.php", {
+        name: "get_comp_y_data",
+        smbCode: t,
+        year: a
+    }, function(t) {
+        obj = JSON.parse(t), $("#yearlySmbData").createTable(obj, {})
+    })
+}
+    </script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+      $(document).ready(getYearlyData(2026));
+    </script>
+  </body>
+
+</html>

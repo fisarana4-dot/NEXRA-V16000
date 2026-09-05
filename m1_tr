@@ -1,0 +1,1 @@
+  q=[float(y['high']) for y in r[i+1:i+6]];w=[float(y['low']) for y in r[i+1:i+6]];print(i,round(max(q)-float(r[i]['close']),3),round(float(r[i]['close'])-min(w),3))

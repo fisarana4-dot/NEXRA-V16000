@@ -1,0 +1,12 @@
+version: 1
+project: NEXRA-V16000
+source_of_truth: git
+registry: .governance/registry.db
+domains:
+  core: app/core
+  domain: app
+  adapters: app/connectors
+  interfaces: app/api
+  tests: tests
+  scripts: scripts
+  docs: docs

@@ -1,0 +1,2 @@
+from pathlib import Path
+TRUTH_ENGINE=Path("control/engine/truth_engine.py")

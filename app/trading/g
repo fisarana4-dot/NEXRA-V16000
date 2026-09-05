@@ -1,0 +1,3 @@
+  if r and (h-max(o,c)>2*b or min(o,c)-l>2*b): x+=["PIN_BAR"]
+  return x or (["BULL"] if c>o else ["BEAR"])
+candle_pattern_engine=CandlePatternEngine()

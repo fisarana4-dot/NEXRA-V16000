@@ -1,0 +1,3 @@
+from app.intelligence.amazon.engine import AmazonMVP
+def test_amazon():
+ assert AmazonMVP().grade(80)=="A"

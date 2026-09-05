@@ -1,0 +1,1 @@
+def test_structured_record(): assert __import__("app.audit.audit_engine",fromlist=["AuditEngine"]).AuditEngine().structured("x",1,"R1","INFO","e")["evidence"]=="e"

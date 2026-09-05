@@ -1,0 +1,61 @@
+ M app/api/v1/endpoints/tradingview.py
+ M app/core/ai_fusion/skills/coding_skill.py
+ M app/evidence/evidence_schema.py
+ M app/intelligence/research/research_memory_pipeline.py
+ M app/trading/gold/strategy/strategy_engine.py
+ M app/trading/strategy/strategy_engine.py
+ M nexra_experience.db
+ M tradingview/nexra_connector.pine
+?? .env.icmarkets
+?? .governance/
+?? .nexra_tmp/
+?? FILE
+?? app/api/v1/endpoints/tradingview.preverify.bak
+?? app/au
+?? app/audi
+?? app/audit/
+?? app/core/ai_fusion/router/ai_router.py.pre_fusion
+?? app/core/ai_fusion/skills/coding_skill.py.bak
+?? app/core/evidence/contract.py.bak
+?? app/integrations/
+?? app/trading/gold/data/bridge/mt5_demo.pre_universal.bak
+?? app/trading/order_engine/
+?? app/trading/strategy/strategy_engine.py.bak
+?? app/visual/
+?? audit.txt
+?? cookies.txt
+?? files.txt
+?? forge_test_target.py.orig
+?? nexra_evidence.db
+?? nexra_files.txt
+?? nexra_v16000.db
+?? order_mvp_before.txt
+?? tests/audit/
+?? tests/intelligence/test_amaz
+?? tests/intelligence/test_amazon.py
+?? tests/intelligence/test_amazon_evidence.py
+?? tests/intelligence/test_research_memory_pipeline.py
+?? tests/test_nx
+?? tests/test_nx_gol_002.py
+?? tests/test_nx_int_
+?? tests/test_nx_int_001.py
+?? tests/test_research_engine.py
+?? tests/test_risk_governor.py
+?? tools/nexra_forge/README.md
+?? tools/nexra_forge/__init__.py
+?? tools/nexra_forge/ai_spec.py
+?? tools/nexra_forge/ai_spec.pycd
+?? tools/nexra_forge/forge.py.baseline
+?? tools/nexra_forge/forge.py.finalbak
+?? tools/nexra_forge/forge.py.locked
+?? tools/nexra_forge/forge.py.pre_builder
+?? tools/nexra_forge/forge.py.safe
+?? tools/nexra_forge/forge.py.v1
+?? tools/nexra_forge/forge_legacy.py
+?? tools/nexra_forge/forge_v2_safe.py
+?? tools/nexra_forge/forge_v3_safe.py
+?? tools/nexra_forge/spec_builder_safe.py
+?? tools/nexra_forge/spec_runner.locked.py
+?? tools/nexra_forge/spec_runner.py
+?? tradingview.bak
+?? tradingview.pre_tvdata.bak

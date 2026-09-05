@@ -1,0 +1,4 @@
+## Reconciliation
+Post-fill; 5min checks; mismatch->SAFE_MODE; verify SL/TP.
+## Crash Recovery
+Block orders; load DB; query broker; reconcile; verify SL/TP; trade last.

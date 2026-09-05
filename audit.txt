@@ -1,0 +1,2 @@
+app/trading/gold/signals/trade_filter.py:2:    def evaluate(self,d): return "WAIT" if d.get("loss_streak",0)>=2 or d.get("inducement",False) or d.get("spread_risk",False) or d.get("slippage_risk",False) or d.get("volatility_risk",False) or d.get("friday_close",False) or d.get("news",False) or d.get("black_swan",False) or d.get("war",False) else "PASS"
+app/trading/gold/risk/decision_gate.py:1:def decision(d): return "PASS" if d.get("score",0)>=7 else "WAIT"

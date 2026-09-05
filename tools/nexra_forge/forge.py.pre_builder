@@ -1,0 +1,19 @@
+import os,shutil,subprocess
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[3]
+def backup(p):
+ shutil.copy2(p,str(p)+".bak") if os.path.exists(p) else None
+def write(p,text):
+ Path(p).write_text(text)
+def restore(p):
+ shutil.copy2(str(p)+".bak",p)
+def compile_file(p):
+ return subprocess.run(["python","-m","py_compile",str(p)]).returncode==0
+def tests():
+ return subprocess.run(["pytest","-q","tests"]).returncode==0
+def apply(p,text):
+ backup(p)
+ write(p,text)
+ if not compile_file(p): restore(p); return False
+ if not tests(): restore(p); return False
+ return True

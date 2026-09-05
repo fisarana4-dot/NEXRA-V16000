@@ -1,0 +1,19 @@
+// NEXRA TV Connector
+//@version=6
+indicator("NEXRA Connector",overlay=true)
+r=ta.rsi(close,14)
+e50=ta.ema(close,50)
+e200=ta.ema(close,200)
+v=ta.vwma(close,20)
+a=ta.atr(14)
+vol=volume
+rvol=vol/ta.sma(vol,20)
+plot(r)
+plot(e50)
+plot(e200)
+plot(v)
+plot(a)
+plot(vol,title="VOL")
+plot(rvol,title="RVOL")
+if barstate.isconfirmed
+ alert("{\"rsi\":"+str.tostring(r)+"}")
