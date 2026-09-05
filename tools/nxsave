@@ -1,0 +1,8 @@
+#!/bin/sh
+msg="$*"
+date >> .nexra_history
+echo "$msg" >> .nexra_history
+git add -A
+git commit -m "NEXRA SAVE: $msg"
+git log -1 --format="%H"
+echo "NEXRA SAVE = PASS"
