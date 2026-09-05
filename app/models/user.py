@@ -1,11 +1,9 @@
 import enum
 from datetime import datetime
 from sqlalchemy import String, Enum, DateTime, func
+from app.core.database import Base
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy.orm import DeclarativeBase
 
-class Base(DeclarativeBase):
-    pass
 
 class UserRole(str, enum.Enum):
     SUPER_ADMIN = "super_admin"
