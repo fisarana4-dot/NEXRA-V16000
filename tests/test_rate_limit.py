@@ -14,3 +14,4 @@ def test_rate_limit(monkeypatch):
  @app.get("/x")
  def x(): return {"ok":1}
  with TestClient(app) as c:
+  assert c.get("/x").status_code==200
