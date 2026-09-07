@@ -1,4 +1,3 @@
-class ValuationFramework: pass
 def roe(p,e): return p/e*100 if e else 0
 def roe_trend(r): return r[-1]-r[0] if len(r)>1 else 0
 def dupont(m,t,l): return m*t*l
@@ -14,3 +13,8 @@ def risk(debt,roe,g): return debt*50-roe-g
 def decision(m,roe,risk): return "BUY" if m>=20 and roe>=15 and risk<20 else "HOLD"
 def signal(m,roe,risk): return "SELL" if m<0 or risk>=50 else decision(m,roe,risk)
 def analyze(d): return {"roe":roe(d["p"],d["e"]),"growth":growth(d["e"],d["oe"]),"signal":signal(d["m"],d["roe"],d["risk"])}
+
+class ValuationFramework:
+ def metrics(self,d): return analyze(d)
+ def value(self,eps,pe): return fair_value(eps,pe)
+ def assess(self,d): return self.metrics(d)
