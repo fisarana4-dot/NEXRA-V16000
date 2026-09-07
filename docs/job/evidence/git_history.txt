@@ -1,0 +1,8 @@
+32d6dbd feat: enhance NEXRA bridge status
+3f420dc NEXRA SAVE: AI provider routing audit checkpoint
+b431837 save: NEXRA current progress
+553dbf8 NEXRA SAVE: NEXRA Continuous Evolution Engine seed
+ff81b8d NEXRA SAVE: Technology Radar foundation
+2a6deed NEXRA SAVE: Continuity system test
+60abe08 NEXRA V16000 baseline and OpenAI SDK 3.8
+b82dd24 Validate RSI engine on Gold M15 data
