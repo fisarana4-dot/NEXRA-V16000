@@ -11,3 +11,4 @@ aiosqlite
 email-validator
 python-jose[cryptography]
 passlib[bcrypt]
+boto3
