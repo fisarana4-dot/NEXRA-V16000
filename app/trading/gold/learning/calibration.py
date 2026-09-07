@@ -1,2 +1,5 @@
+from dataclasses import dataclass
+@dataclass
 class Calibration:
-    pass
+ confidence: float
+ accuracy: float

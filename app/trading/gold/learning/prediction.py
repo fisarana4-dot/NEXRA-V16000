@@ -1,2 +1,5 @@
+from dataclasses import dataclass
+@dataclass
 class Prediction:
-    pass
+ signal: str
+ confidence: float

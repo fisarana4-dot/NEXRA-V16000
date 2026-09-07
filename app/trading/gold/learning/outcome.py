@@ -1,2 +1,5 @@
+from dataclasses import dataclass
+@dataclass
 class Outcome:
-    pass
+ result: str
+ value: float
