@@ -15,3 +15,6 @@ def test_tool_name_required():
 def test_server_name_required():
     with pytest.raises(Exception):
         MCPServer(name="")
+def test_server_transport_invalid():
+    with pytest.raises(ValueError):
+        MCPServer(name="x",transport="ftp")
