@@ -32,6 +32,8 @@ def test_adapter():
 from app.core.mcp.contracts import MCPTool
 def test_registry_list(): r=MCPRegistry(); s=MCPServer(name="x"); r.register(s); assert r.list_servers()==[s]
 def test_registry_unregister(): r=MCPRegistry(); s=MCPServer(name="x"); r.register(s); assert r.unregister("x") is s
+def test_registry_has(): assert MCPRegistry().has("x") is False
+def test_registry_has_registered(): r=MCPRegistry(); r.register(MCPServer(name="x")); assert r.has("x") is True
 def test_registry_unregister_missing(): assert MCPRegistry().unregister("missing") is None
 def test_registry_list_tools():
     r=MCPRegistry(); s=MCPServer(name="x",tools=[MCPTool(name="a")]); r.register(s); assert r.list_tools()==[s.tools[0]]
