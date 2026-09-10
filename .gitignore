@@ -18,3 +18,4 @@ cookies.txt
 __pycache__/
 .pytest_cache/
 tmp/
+.nexra_tmp/*.whl
