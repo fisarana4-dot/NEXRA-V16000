@@ -29,3 +29,5 @@ def test_adapter():
  c=to_tool_contract(t)
  assert c.name == "gmail.search"
 from app.core.mcp.contracts import MCPTool
+def test_registry_list(): r=MCPRegistry(); s=MCPServer(name="x"); r.register(s); assert r.list_servers()==[s]
+def test_registry_unregister(): r=MCPRegistry(); s=MCPServer(name="x"); r.register(s); assert r.unregister("x") is s
