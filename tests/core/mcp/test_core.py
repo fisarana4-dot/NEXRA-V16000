@@ -1,3 +1,4 @@
+import pytest
 from app.core.mcp.registry import MCPRegistry
 from app.core.mcp.registry import MCPRegistry
 from app.core.mcp.contracts import MCPServer
@@ -33,3 +34,7 @@ def test_registry_list(): r=MCPRegistry(); s=MCPServer(name="x"); r.register(s);
 def test_registry_unregister(): r=MCPRegistry(); s=MCPServer(name="x"); r.register(s); assert r.unregister("x") is s
 def test_registry_list_tools():
     r=MCPRegistry(); s=MCPServer(name="x",tools=[MCPTool(name="a")]); r.register(s); assert r.list_tools()==[s.tools[0]]
+def test_registry_duplicate():
+    r=MCPRegistry(); r.register(MCPServer(name="x"))
+    with pytest.raises(ValueError):
+        r.register(MCPServer(name="x"))
