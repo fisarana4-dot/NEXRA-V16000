@@ -2,6 +2,8 @@ from .contracts import MCPServer
 class MCPRegistry:
     def __init__(self): self.servers = {}
     def register(self, server):
+        if not isinstance(server, MCPServer):
+            raise TypeError("server must be MCPServer")
         if server.name in self.servers:
             raise ValueError("Server already registered")
         self.servers[server.name] = server

@@ -38,3 +38,6 @@ def test_registry_duplicate():
     r=MCPRegistry(); r.register(MCPServer(name="x"))
     with pytest.raises(ValueError):
         r.register(MCPServer(name="x"))
+def test_registry_invalid_server():
+    with pytest.raises(TypeError):
+        MCPRegistry().register("invalid")
