@@ -24,11 +24,15 @@ def test_executor_ready():
  assert r["status"] == "READY"
  assert r["tool"] == "gmail.search"
  assert r["args"]["q"] == "test"
+from app.core.mcp.adapter import to_openai_tool
 from app.core.mcp.adapter import to_tool_contract
 def test_adapter():
  t=MCPTool(name="gmail.search")
  c=to_tool_contract(t)
  assert c.name == "gmail.search"
+def test_openai_adapter():
+    t=MCPTool(name="x")
+    assert to_openai_tool(t)["type"]=="function"
 from app.core.mcp.contracts import MCPTool
 def test_registry_list(): r=MCPRegistry(); s=MCPServer(name="x"); r.register(s); assert r.list_servers()==[s]
 def test_registry_unregister(): r=MCPRegistry(); s=MCPServer(name="x"); r.register(s); assert r.unregister("x") is s
