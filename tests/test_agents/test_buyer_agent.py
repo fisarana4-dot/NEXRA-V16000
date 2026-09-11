@@ -5,3 +5,11 @@ def test_country_score():
 
 def test_empty_score():
     assert BuyerFinderAgent().score_buyer({}) == 0
+
+def test_buyer_evidence():
+    from app.core.evidence.ingest import ingest
+    from app.core.evidence.validator import validate
+    e=ingest("BUYER","EXPORT",{"country":"PK"},"now")
+    assert validate(e)
+    from app.core.evidence.hash import fingerprint
+    assert fingerprint(e)
