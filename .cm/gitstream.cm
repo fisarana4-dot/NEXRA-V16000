@@ -1,0 +1,12 @@
+manifest:
+  version: 1.0
+automations:
+  nexra_ai_review:
+    on: [pr_created, pr_ready_for_review]
+    if:
+      - "{{ not is.bot }}"
+    run:
+      - action: code-review@v1
+        args:
+          guidelines: |
+            - Keep suggestions short and actionable.

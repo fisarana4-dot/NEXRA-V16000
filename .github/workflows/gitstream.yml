@@ -1,0 +1,44 @@
+name: gitStream workflow automation
+on:
+  workflow_dispatch:
+    inputs:
+      client_payload:
+        description: Client payload
+        required: true
+      full_repository:
+        description: Repository name
+        required: true
+      head_ref:
+        description: Head SHA
+        required: true
+      base_ref:
+        description: Base SHA
+        required: true
+      installation_id:
+        required: false
+      resolver_url:
+        required: true
+        description: Resolver URL
+      resolver_token:
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  gitStream:
+    name: gitStream workflow automation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Adding PR Url
+        run: echo "gitStream PR evaluation started"
+      - uses: linear-b/gitstream-github-action@v2
+        id: rules-engine
+        with:
+          full_repository: ${{ inputs.full_repository }}
+          head_ref: ${{ inputs.head_ref }}
+          base_ref: ${{ inputs.base_ref }}
+          client_payload: ${{ inputs.client_payload }}
+          installation_id: ${{ inputs.installation_id }}
+          resolver_url: ${{ inputs.resolver_url }}
+          resolver_token: ${{ inputs.resolver_token }}
