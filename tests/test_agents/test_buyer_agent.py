@@ -21,3 +21,10 @@ def test_buyer_qualification():
 def test_buyer_without_country():
     agent=BuyerFinderAgent()
     assert agent.score_buyer({}) == 0
+
+def test_qualify_buyer():
+    from app.core.evidence.ingest import ingest
+
+    e=ingest("BUYER","EXPORT",{"country":"PK"},"now")
+    r=BuyerFinderAgent().qualify_buyer({"country":"PK"},e)
+    assert r["status"]=="QUALIFIED_FOR_REVIEW"
