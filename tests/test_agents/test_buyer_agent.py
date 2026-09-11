@@ -13,3 +13,11 @@ def test_buyer_evidence():
     assert validate(e)
     from app.core.evidence.hash import fingerprint
     assert fingerprint(e)
+
+def test_buyer_qualification():
+    agent=BuyerFinderAgent()
+    assert agent.score_buyer({"country":"PK"}) >= 20
+
+def test_buyer_without_country():
+    agent=BuyerFinderAgent()
+    assert agent.score_buyer({}) == 0
