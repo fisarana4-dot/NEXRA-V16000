@@ -12,3 +12,14 @@ def test_email_service():
     m=EmailMessage(to="b@c.com",subject="Hi",body="Test")
     r=s.send(m)
     assert r["status"]=="sent"
+from unittest.mock import MagicMock,patch
+from app.export_business.email_outreach.smtp import SMTPEmailTransport
+def test_smtp_mock():
+ m=MagicMock();m.__enter__.return_value=m
+ msg=EmailMessage("to@x.com","Hi","Body",reply_to="r@x.com")
+ with patch("app.export_business.email_outreach.smtp.smtplib.SMTP") as p:
+  p.return_value.__enter__.return_value=m
+  r=SMTPEmailTransport("h",587,"u","p","f@x.com").send(msg)
+  assert r["status"]=="sent"
+  assert m.send_message.called
+  assert m.send_message.call_args[0][0]["Reply-To"]=="r@x.com"
