@@ -23,3 +23,14 @@ def test_smtp_mock():
   assert r["status"]=="sent"
   assert m.send_message.called
   assert m.send_message.call_args[0][0]["Reply-To"]=="r@x.com"
+def test_smtp_env(monkeypatch):
+ monkeypatch.setenv("SMTP_HOST","envhost")
+ t=SMTPEmailTransport();assert t.host=="envhost"
+def test_smtp_not_configured():
+ assert SMTPEmailTransport().send(None)["status"]=="NOT_CONFIGURED"
+def test_smtp_auth():
+ m=MagicMock();m.__enter__.return_value=m
+ with patch("app.export_business.email_outreach.smtp.smtplib.SMTP") as p:
+  p.return_value.__enter__.return_value=m
+  SMTPEmailTransport("h",587,"u","p","f@x.com").send(EmailMessage("a","b","c"))
+  assert m.login.called and m.starttls.called
