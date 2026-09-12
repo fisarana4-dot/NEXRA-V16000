@@ -12,3 +12,5 @@ email-validator
 python-jose[cryptography]
 passlib[bcrypt]
 boto3
+openai==3.8.0
+opentelemetry-instrumentation-fastapi==0.65b0
