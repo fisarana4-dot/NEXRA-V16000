@@ -12,5 +12,7 @@ email-validator
 python-jose[cryptography]
 passlib[bcrypt]
 boto3
+aws-cdk-lib==2.269.0
+constructs==10.8.1
 openai==3.8.0
 opentelemetry-instrumentation-fastapi==0.65b0
