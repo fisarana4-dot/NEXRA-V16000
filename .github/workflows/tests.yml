@@ -9,4 +9,4 @@ jobs:
         with:
           python-version: '3.14'
       - run: pip install -r requirements.txt
-      - run: pytest tests/ -q
+      - run: PYTHONPATH=. pytest tests/ -q
