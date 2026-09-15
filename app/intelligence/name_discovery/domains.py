@@ -1,0 +1,13 @@
+DOMAINS={}
+DOMAINS['linkedin']='linkedin.com'
+DOMAINS['youtube']='youtube.com'
+DOMAINS['facebook']='facebook.com'
+DOMAINS['instagram']='instagram.com'
+DOMAINS['reddit']='reddit.com'
+DOMAINS['amazon']='amazon.com'
+DOMAINS['ebay']='ebay.com'
+DOMAINS['shopify']='myshopify.com'
+DOMAINS['github']='github.com'
+DOMAINS['alibaba']='alibaba.com'
+DOMAINS['daraz']='daraz.pk'
+DOMAINS['telegram']='t.me'

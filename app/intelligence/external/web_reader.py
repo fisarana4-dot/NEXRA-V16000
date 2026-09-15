@@ -4,5 +4,5 @@ def fetch(url):
 from dataclasses import dataclass
 @dataclass
 class WebResult:
- status:int
+ status:int; length:int; title:str=""; text:str=""
  length:int
