@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fisarana4-dot.github.io/NEXRA-V16000/sitemap.xml
