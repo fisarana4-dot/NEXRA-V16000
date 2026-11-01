@@ -12,3 +12,4 @@ def test_fvg(): assert 10.5 > 10.0
 def test_mss(): assert "MSS" != ""
 def test_bos(): assert "BOS" != ""
 def test_liquidity_sweep(): assert "SWEEP" != ""
+def test_order_block(): assert "OB" != ""
