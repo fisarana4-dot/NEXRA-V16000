@@ -1,1 +1,2 @@
 def test_lead_address_diagnosis(): assert "Ahmed_Medics_Africa" != ""
+def test_lead_geo_location_verifier(): assert "Geo_Verified" != ""
