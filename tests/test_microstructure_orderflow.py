@@ -4,3 +4,7 @@ class V:
     def evaluate(s,v): return "BULL" if s>1 and v>1000 else "NEUTRAL"
 @pytest.mark.parametrize("s,v,e",[(1.5,1200,"BULL"),(0.5,500,"NEUTRAL")])
 def test_vsa(s,v,e): assert V.evaluate(s,v)==e
+def test_cdv(): assert sum([10, -5]) == 5
+def test_cdv(): assert sum([10, -5]) == 5
+def test_cdv_neg(): assert sum([-10, -20]) == -30
+def test_obv(): assert (100 if 10.5 > 10.0 else -100) == 100
