@@ -1,3 +1,4 @@
+from app.trading.gold.volume.rvol_engine import rvol_engine
 from app.trading.gold.flow.obv_divergence import obv_engine
 from app.trading.gold.flow.mfi_engine import mfi_engine
 from app.trading.gold.indicators.ema_engine import ema_engine
@@ -21,4 +22,5 @@ class GoldIndicators:
     def mfi(self,h,l,c,v,p=14): return mfi_engine.value(h,l,c,v,p)
     def obv(self,c,v): return obv_engine.value(c,v)
     def obv_divergence(self,prices,obv): return obv_divergence_engine.detect(prices,obv)
+    def rvol(self,volume): return rvol_engine.analyze(volume)
 indicators=GoldIndicators()
