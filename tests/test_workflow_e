@@ -1,0 +1,2 @@
+def test_context_copy(): w=WorkflowEngine(); w.define("x",[lambda c:{**c,"b":2}]); original={"a":1}; assert w.run("x",original)=={"a":1,"b":2}; assert original=={"a":1}
+def test_context_copy(): w=WorkflowEngine(); w.define("x",[lambda c:{**c,"b":2}]); original={"a":1}; assert w.run("x",original)=={"a":1,"b":2}; assert original=={"a":1}

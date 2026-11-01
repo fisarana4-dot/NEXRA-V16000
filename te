@@ -1,0 +1,4 @@
+from evidence_engine import EvidenceEngine
+
+def test_v():
+    assert EvidenceEngine({'doc_id':'1','doc_type':'T','amount':10,'sender':'N'}).generate_evidence()['status']=='VALIDATED'

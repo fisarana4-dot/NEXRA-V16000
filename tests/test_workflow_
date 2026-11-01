@@ -1,0 +1,2 @@
+def test_workflows_isolated(): w=WorkflowEngine(); w.define("a",[lambda c:{"a":1}]); w.define("b",[lambda c:{"b":2}]); assert w.run("a")=={"a":1} and w.run("b")=={"b":2}
+def test_workflows_isolated(): w=WorkflowEngine(); w.define("a",[lambda c:{"a":1}]); w.define("b",[lambda c:{"b":2}]); assert w.run("a")=={"a":1} and w.run("b")=={"b":2}

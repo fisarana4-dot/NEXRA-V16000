@@ -1,0 +1,3 @@
+Rows: 4
+Missing email: 1
+Duplicates: 1

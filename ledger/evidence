@@ -1,0 +1,7 @@
+import hashlib, rfc8785
+
+class Ledger:
+    @staticmethod
+    def seal(data: dict) -> str:
+        return hashlib.sha256(rfc8785.dumps(data)).hexdigest()
+        return hashlib.sha256(json.dumps(d, sort_keys=True).encode()).hexdigest()

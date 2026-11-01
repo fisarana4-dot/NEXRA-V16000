@@ -1,0 +1,45 @@
+diff --git a/app/core/database.py b/app/core/database.py
+index acdcecc..da27984 100644
+--- a/app/core/database.py
++++ b/app/core/database.py
+@@ -22,5 +22,6 @@ async def get_db():
+         yield session
+ async def init_db():
+     import app.models.user
++    import app.models.lead
+     async with engine.begin() as conn:
+         await conn.run_sync(Base.metadata.create_all)
+diff --git a/app/schemas/b2b/lead.py b/app/schemas/b2b/lead.py
+index e69de29..8a2222b 100644
+--- a/app/schemas/b2b/lead.py
++++ b/app/schemas/b2b/lead.py
+@@ -0,0 +1,16 @@
++from pydantic import BaseModel
++from typing import Optional
++class LeadCreate(BaseModel):
++    tenant_id:str
++    company_name:str
++    country:Optional[str]=None
++    industry:Optional[str]=None
++    website:Optional[str]=None
++    email:Optional[str]=None
++    phone:Optional[str]=None
++    source:Optional[str]=None
++class LeadResponse(LeadCreate):
++    id:int
++    verification_status:str="UNVERIFIED"
++    lead_score:int=0
++    created_at:Optional[str]=None
+diff --git a/tests/test_aws_foundation.py b/tests/test_aws_foundation.py
+index 90a979f..4060875 100644
+--- a/tests/test_aws_foundation.py
++++ b/tests/test_aws_foundation.py
+@@ -6,3 +6,8 @@ def test_aws_clients():
+  assert boto3.client("stepfunctions",region_name="us-east-1")
+ def test_aws_region():
+  assert boto3.Session(region_name="us-east-1").region_name=="us-east-1"
++def test_redis_foundation_source():
++ s=open("infra/cdk/app.py").read()
++ assert "CfnCacheCluster" in s
++ assert "engine=" + chr(34) + "redis" + chr(34) in s
++ assert "cache_node_type=" + chr(34) + "cache.t3.micro" + chr(34) in s

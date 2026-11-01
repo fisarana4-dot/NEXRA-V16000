@@ -1,0 +1,5 @@
+import hashlib,json
+class Ledger:
+ @staticmethod
+ def seal(d):
+  return hashlib.sha256(json.dumps(d,sort_keys=True).encode()).hexdigest()
