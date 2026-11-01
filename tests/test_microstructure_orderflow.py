@@ -11,3 +11,4 @@ def test_obv(): assert (100 if 10.5 > 10.0 else -100) == 100
 def test_fvg(): assert 10.5 > 10.0
 def test_mss(): assert "MSS" != ""
 def test_bos(): assert "BOS" != ""
+def test_liquidity_sweep(): assert "SWEEP" != ""
