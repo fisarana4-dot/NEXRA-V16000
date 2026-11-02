@@ -12,3 +12,5 @@ def test_mx_points_require_valid_mx():
     result = LeadScorer().score({"email":"a@a.com"})
     assert result["breakdown"]["mx"]["points"] == 0
 def test_valid_mx_gets_20_points():
+    result = LeadScorer().score({"email":"a@a.com"}, mx_valid=True)
+    assert result["breakdown"]["mx"]["points"] == 20
