@@ -3,7 +3,7 @@ from openai import OpenAI
 from .base.base_provider import BaseProvider
 class OpenAIProvider(BaseProvider):
     name="openai"
-    model="gpt-5"
+    model=os.getenv("OPENAI_MODEL", "gpt-6.1-sol")
     def __init__(self):
         self.key=os.getenv("OPENAI_API_KEY")
         self.client=None
