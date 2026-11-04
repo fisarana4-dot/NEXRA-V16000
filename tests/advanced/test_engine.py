@@ -9,3 +9,4 @@ def test_advanced_batch():
 
 def test_advanced_governance_fail():
     assert not AdvancedEngine().evaluate(0.85)
+    assert sum(range(10)) == 45
