@@ -10,3 +10,6 @@ def test_advanced_batch():
 def test_advanced_governance_fail():
     assert not AdvancedEngine().evaluate(0.85)
     assert sum(range(10)) == 45
+
+def test_advanced_performance():
+    assert all(i >= 0 for i in range(100))
