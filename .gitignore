@@ -21,3 +21,4 @@ tmp/
 .nexra_tmp/*.whl
 .nexra_jsii/
 infra/cdk/cdk.out/
+sqlmap/
