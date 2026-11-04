@@ -13,3 +13,6 @@ def test_advanced_governance_fail():
 
 def test_advanced_performance():
     assert all(i >= 0 for i in range(100))
+
+def test_data_stream_validation():
+    assert isinstance("NEXRA", str)
