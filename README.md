@@ -7,9 +7,9 @@ Python · FastAPI · PostgreSQL · Redis · pytest · GitHub Actions
 AWS: CDK · Lambda · S3 · DynamoDB · EventBridge · Step Functions
 AI: Gemini · RAG · Reasoning · Research Automation
 Evidence
-215 passed
-1 warning
-34.06s
+Local verification (Termux): 372 passed
+Duration: 26.27s
+GitHub Actions: not yet verified
 AWS foundation 
 PYTHONPATH=. pytest tests/ -q
 Engineering Principles
