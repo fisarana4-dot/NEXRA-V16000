@@ -19,7 +19,7 @@ app.add_api_route("/health", lambda: {"status":"ok","system":"NEXRA V16000"}, me
 app.include_router(router)
 app.include_router(auth.router)
 app.include_router(decision.router)
-app.include_router(gateway.router)
 app.include_router(tradingview.router)
+app.include_router(gateway.router)
 from app.saas.middleware.tenant import SaaSContextMiddleware
 app.add_middleware(SaaSContextMiddleware)

@@ -9,3 +9,46 @@ def test_verify_chain():
     r={"payload":{"a":1}}; r["hash"]=chain_hash(r["payload"]); assert verify_chain([r])
 def test_tamper():
     r={"payload":{"a":1}}; r["hash"]=chain_hash(r["payload"]); r["payload"]["a"]=2; assert not verify_chain([r])
+def test_verify_chain_missing_hash():
+    assert not verify_chain([{"payload": {"a": 1}}])
+def test_verify_chain_multiple_records():
+    a = {"payload": {"id": 1}}
+    a["hash"] = chain_hash(a["payload"])
+    b = {"payload": {"id": 2}}
+    b["hash"] = chain_hash(b["payload"], a["hash"])
+
+    assert verify_chain([a, b])
+def test_verify_chain_tampered_hash():
+    r = {"payload": {"id": 1}}
+    r["hash"] = chain_hash(r["payload"])
+    r["hash"] = "0" * 64
+    assert not verify_chain([r])
+def test_verify_chain_empty():
+    assert verify_chain([])
+def test_verify_chain_missing_payload():
+    assert not verify_chain([{"hash": "0" * 64}])
+def test_verify_chain_invalid_payload():
+    r = {"payload": {1, 2}}
+    r["hash"] = "0" * 64
+    assert not verify_chain([r])
+def test_verify_chain_reordered_records():
+    a = {"payload": {"id": 1}}
+    a["hash"] = chain_hash(a["payload"])
+    b = {"payload": {"id": 2}}
+    b["hash"] = chain_hash(b["payload"], a["hash"])
+
+    assert not verify_chain([b, a])
+def test_verify_chain_previous_hash_tampered():
+    a = {"payload": {"id": 1}}
+    a["hash"] = chain_hash(a["payload"])
+    b = {"payload": {"id": 2}}
+    b["hash"] = chain_hash(b["payload"], a["hash"])
+    a["hash"] = "0" * 64
+    assert not verify_chain([a, b])
+
+def test_chain_hash_rejects_nan():
+    try:
+        chain_hash({'x': float('nan')})
+    except ValueError:
+        pass
+    else: raise AssertionError("NaN accepted")
