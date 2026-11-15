@@ -10,5 +10,9 @@
   {
     "email": "third@example.com",
     "hash": "5ea95101b32412e4b2301f6cab9157674bbc10f3a48f2ba85ae151e6b3a79fea"
+  },
+  {
+    "email": "fourth@example.com",
+    "hash": "a97b11151970f0e5aa221a87b052d0721fe3bef686c87e2872abf26ed5cde8c8"
   }
 ]
