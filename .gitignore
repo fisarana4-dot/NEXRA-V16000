@@ -22,3 +22,5 @@ tmp/
 .nexra_jsii/
 infra/cdk/cdk.out/
 sqlmap/
+*.swp
+*.swo
