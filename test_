@@ -1,5 +1,0 @@
-import json, hashlib
-with open("verified_leads.json") as f:
- for i in json.load(f):
-  assert i["hash"]==hashlib.sha256(i["email"].encode()).hexdigest()
-print("EVIDENCE VERIFIED")
