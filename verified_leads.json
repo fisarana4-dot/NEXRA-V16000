@@ -1,10 +1,14 @@
 [
   {
     "email": "buyer@rice-importers.com",
-    "hash": "ec17816f70bd35c8e7386bed09c10680e409f467e5aa6222eb1f83b97db3321e"
+    "hash": "6f7f291baabcab3d4eb466e9d52dca9a11b9e4fdd7aa039746da1ae0a3216f6f"
   },
   {
-    "email": "info@global-food.com",
-    "hash": "fb56cc524dcfa6a98ff42ed2673ef07911f143e8ced617691a20fb2b7ff57922"
+    "email": "second@example.com",
+    "hash": "dbdf5aabbdac1d3c08798cd145fc3a618a0842278133b52cc65897ef14a524ff"
+  },
+  {
+    "email": "third@example.com",
+    "hash": "5ea95101b32412e4b2301f6cab9157674bbc10f3a48f2ba85ae151e6b3a79fea"
   }
 ]
